@@ -1,0 +1,15 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main() 
+{
+    float n,R;
+    cin>>n;
+    float M=1;
+    float vector[4]={1,5,3,7};
+    for( int i=0 ; i<n ; i++){
+        M=M*(vector[i]);
+    }
+    R=pow(M,(1/n));
+    cout<<R;
+}
