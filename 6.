@@ -1,0 +1,58 @@
+#include <iostream>
+using namespace std;
+int main() {
+    double n,j,k;
+    cout<<"Dig[10]={23,15,30,25,42,35,20,40}"<<endl;
+    cin>>n;
+    cout<<"prediccion 1:"<<endl;
+    cin>>j;
+    cout<<"prediccion 2:"<<endl;
+    cin>>k;
+    
+    int P1,P2;
+    
+    double MX,MY;
+    
+    float SUMx=0;
+    float SUMv=0;
+    float SXY=0;
+    float SX2=0;
+    
+    float A,B,m,b;
+    
+    long Dig[10]={23,15,30,25,42,35,20,40};
+    for (int i= 0 ; i<n ; i++){
+        SUMx=SUMx+i+1;
+        SUMv=SUMv+Dig[i];
+        SXY=SXY+((i+1)*(Dig[i]));
+        SX2=SX2+((i+1)*(i+1));
+        
+    }
+    //MEDIA DE X
+    MX=SUMx/n;
+    //MEDIA DE Y
+    MY=SUMv/n;
+    
+    A=SXY-((SUMx)*(SUMv)/n);
+    B=SX2-((SUMx)*(SUMx)/n);
+    m=A/B;
+    
+    b=MY-((m)*(MX));
+    
+    //modelo para predicciones:
+    P1=m*j+b;
+    P2=m*k+b;
+    
+    cout<<"Sumatoria de Dias:"<<SUMx<<endl;
+    cout<<"Sumatoria de Ventas:"<<SUMv<<endl;
+    cout<<"Sumatoria de XY:"<<SXY<<endl;
+    cout<<"Sumatorias de X2:"<<SX2<<endl;
+    cout<<"Media de X:"<<MX<<endl;
+    cout<<"Media de Y:"<<MY<<endl;
+    cout<<"m:"<<m<<endl;
+    cout<<"b"<<b;
+    cout<<"Prediccion 1:"<<P1<<endl;
+    cout<<"Prediccion 2:"<<P2<<endl;
+    
+    return 0;
+}
